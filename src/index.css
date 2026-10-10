@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Hide scrollbar for clean horizontal tab strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom dark themes */
+body.theme-dim {
+  background-color: #15202b !important;
+  color: #f7f9f9 !important;
+}
+
+body.theme-light {
+  background-color: #ffffff !important;
+  color: #0f1419 !important;
+}
+
+body.theme-dark {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}

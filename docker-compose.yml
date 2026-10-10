@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  viewable:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: viewable_client
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      # Optional proxy for outbound requests (Tor / SOCKS5 / HTTP)
+      # - PROXY_URL=socks5://tor:9050
+      # Optional Gemini API key for high-thinking analysis
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      # Optional Nitter instance list override
+      - NITTER_INSTANCES=${NITTER_INSTANCES:-https://nitter.privacydev.net,https://nitter.poast.org,https://nitter.woodland.cafe}
+      # Optional Web Push keys
+      - VAPID_PUBLIC_KEY=${VAPID_PUBLIC_KEY:-}
+      - VAPID_PRIVATE_KEY=${VAPID_PRIVATE_KEY:-}
+      - VAPID_SUBJECT=${VAPID_SUBJECT:-mailto:admin@viewable.local}
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

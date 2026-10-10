@@ -1,0 +1,6 @@
+{
+  "name": "Viewable",
+  "description": "A privacy-first, anonymous web client for viewing X/Twitter that looks and feels like X.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
