@@ -43,7 +43,7 @@ A privacy-first, anonymous web client for viewing X/Twitter that looks, feels, a
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/your-username/viewable.git
+git clone https://github.com/Nikoskampourakis/Viewable-.git
 cd viewable
 npm install
 ```
